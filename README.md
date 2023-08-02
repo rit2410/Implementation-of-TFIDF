@@ -13,12 +13,13 @@
 1. Typically, the tf-idf weight is composed by two terms: the first computes the normalized Term Frequency (TF), aka. the number of times a word appears in a document, divided by the total number of words in that document; the second term is the Inverse Document Frequency (IDF), computed as the logarithm of the number of the documents in the corpus divided by the number of documents where the specific term appears.
 2. TF: Term Frequency, which measures how frequently a term occurs in a document.
 Since every document is different in length, it is possible that a term would appear much more times in long documents than shorter ones. Thus, the term frequency is often divided by the document length (aka. the total number of terms in the document) as a way of normalization: 
-TF(t) = Number of times term t appears in a document / Total number of terms in the document
+
+**TF(t) = Number of times term t appears in a document / Total number of terms in the document**
 
 3. IDF: Inverse Document Frequency, which measures how important a term is.
 While computing TF, all terms are considered equally important. However it is known that certain terms, such as "is", "of", and "that", may appear a lot of times but have little importance. Thus we need to weigh down the frequent terms while scale up the rare ones, by computing the following: 
 
-IDF(t) = log(Total number of documents/Number of documents with term t in it)
+**IDF(t) = log(Total number of documents/Number of documents with term t in it)**
 
 For numerical stabiltiy we will be changing this formula little bit : 
-IDF(t) = log (Total number of documents/Number of documents with term t in it+1 )
+**IDF(t) = log (Total number of documents/Number of documents with term t in it+1 )**
