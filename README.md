@@ -22,4 +22,5 @@ While computing TF, all terms are considered equally important. However it is kn
 **IDF(t) = log(Total number of documents/Number of documents with term t in it)**
 
 For numerical stabiltiy we will be changing this formula little bit : 
+
 **IDF(t) = log (Total number of documents/Number of documents with term t in it+1 )**
